@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1446671340 source:d:\myprojects\somevkmusic\resource.rc
+1473168211 source:d:\myprojects\somevkmusic\resource.rc
 	"wx/msw/wx.rc"
 
 1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\msw\wx.rc
@@ -19,11 +19,11 @@
 
 1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\msw\rcdefs.h
 
-1473165918 source:d:\myprojects\somevkmusic\somevkmusicapp.cpp
+1473168210 source:d:\myprojects\somevkmusic\somevkmusicapp.cpp
 	"SomeVKMusicApp.h"
 	"SomeVKMusicMain.h"
 
-1473165917 d:\myprojects\somevkmusic\somevkmusicapp.h
+1473168210 d:\myprojects\somevkmusic\somevkmusicapp.h
 	<wx/app.h>
 
 1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\app.h
@@ -1709,8 +1709,9 @@
 1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\univ\theme.h
 	"wx/string.h"
 
-1473167048 d:\myprojects\somevkmusic\somevkmusicmain.h
+1473173145 d:\myprojects\somevkmusic\somevkmusicmain.h
 	<wx/wx.h>
+	<wx/aui/aui.h>
 	"SomeVKMusicApp.h"
 
 1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\wx.h
@@ -2949,6 +2950,168 @@
 1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\cocoa\mdi.h
 	"wx/frame.h"
 
-1473166386 source:d:\myprojects\somevkmusic\somevkmusicmain.cpp
+1473172063 source:d:\myprojects\somevkmusic\somevkmusicmain.cpp
 	"SomeVKMusicMain.h"
+	<wx/sizer.h>
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\aui\aui.h
+	"wx/aui/framemanager.h"
+	"wx/aui/dockart.h"
+	"wx/aui/floatpane.h"
+	"wx/aui/auibar.h"
+	"wx/aui/auibook.h"
+	"wx/aui/tabmdi.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\aui\framemanager.h
+	"wx/defs.h"
+	"wx/dynarray.h"
+	"wx/gdicmn.h"
+	"wx/window.h"
+	"wx/timer.h"
+	"wx/sizer.h"
+	"wx/bitmap.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\aui\dockart.h
+	"wx/defs.h"
+	"wx/pen.h"
+	"wx/brush.h"
+	"wx/bitmap.h"
+	"wx/colour.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\aui\floatpane.h
+	"wx/defs.h"
+	"wx/weakref.h"
+	"wx/minifram.h"
+	"wx/frame.h"
+
+1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\minifram.h
+	"wx/defs.h"
+	"wx/msw/minifram.h"
+	"wx/motif/minifram.h"
+	"wx/gtk/minifram.h"
+	"wx/gtk1/minifram.h"
+	"wx/x11/minifram.h"
+	"wx/osx/minifram.h"
+	"wx/os2/minifram.h"
+	"wx/frame.h"
+
+1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\msw\minifram.h
+	"wx/frame.h"
+
+1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\motif\minifram.h
+	"wx/frame.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\gtk\minifram.h
+	"wx/bitmap.h"
+	"wx/frame.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\gtk1\minifram.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/frame.h"
+
+1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\x11\minifram.h
+	"wx/frame.h"
+
+1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\osx\minifram.h
+	"wx/frame.h"
+
+1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\os2\minifram.h
+	"wx/frame.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\aui\auibar.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/sizer.h"
+	"wx/pen.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\aui\auibook.h
+	"wx/defs.h"
+	"wx/aui/tabart.h"
+	"wx/aui/framemanager.h"
+	"wx/bookctrl.h"
+	"wx/containr.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\aui\tabart.h
+	"wx/defs.h"
+	"wx/colour.h"
+	"wx/gdicmn.h"
+	"wx/font.h"
+	"wx/pen.h"
+	"wx/brush.h"
+	"wx/bitmap.h"
+	"wx/aui/tabartgtk.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\aui\tabartgtk.h
+	"wx/defs.h"
+	"wx/aui/tabart.h"
+	"wx/gdicmn.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\bookctrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/dynarray.h"
+	"wx/withimages.h"
+	"wx/notebook.h"
+	"wx/choicebk.h"
+
+1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\withimages.h
+	"wx/defs.h"
+	"wx/icon.h"
+	"wx/imaglist.h"
+
+1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\notebook.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/univ/notebook.h"
+	"wx/msw/notebook.h"
+	"wx/generic/notebook.h"
+	"wx/gtk/notebook.h"
+	"wx/gtk1/notebook.h"
+	"wx/osx/notebook.h"
+	"wx/cocoa/notebook.h"
+	"wx/os2/notebook.h"
+
+1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\univ\notebook.h
+	"wx/arrstr.h"
+
+1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\msw\notebook.h
+	"wx/control.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\generic\notebook.h
+	"wx/event.h"
+	"wx/control.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\gtk\notebook.h
+	"wx/list.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\gtk1\notebook.h
+	"wx/list.h"
+
+1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\osx\notebook.h
+	"wx/event.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\cocoa\notebook.h
+	"wx/cocoa/NSTabView.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\cocoa\nstabview.h
+	"wx/hashmap.h"
+	"wx/cocoa/ObjcAssociate.h"
+	"wx/cocoa/ObjcRef.h"
+
+1412627644 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\os2\notebook.h
+	"wx/control.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\choicebk.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/choice.h"
+	"wx/containr.h"
+
+1412627642 d:\programs\codeblocks\wxwidgets-3.0.2\include\wx\aui\tabmdi.h
+	"wx/frame.h"
+	"wx/panel.h"
+	"wx/notebook.h"
+	"wx/icon.h"
+	"wx/aui/auibook.h"
 
