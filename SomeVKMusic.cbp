@@ -25,6 +25,10 @@
 					<Add library="libwxbase30ud.a" />
 					<Add library="libwxpngd.a" />
 					<Add library="libwxzlibd.a" />
+					<Add library="libwxmsw30ud_aui.a" />
+					<Add library="libwxmsw30ud_webview.a" />
+					<Add library="libwxbase30ud_xml.a" />
+					<Add library="libwxbase30ud_net.a" />
 					<Add directory="%wxwin%/lib/gcc_dll" />
 				</Linker>
 			</Target>
@@ -47,6 +51,10 @@
 					<Add library="libwxbase30u.a" />
 					<Add library="libwxpng.a" />
 					<Add library="libwxzlib.a" />
+					<Add library="libwxmsw30u_aui.a" />
+					<Add library="libwxmsw30u_webview.a" />
+					<Add library="libwxbase30u_xml.a" />
+					<Add library="libwxbase30u_net.a" />
 					<Add directory="%wxwin%/lib/gcc_dll" />
 				</Linker>
 			</Target>
@@ -71,6 +79,12 @@
 		<Unit filename="SomeVKMusicApp.h" />
 		<Unit filename="SomeVKMusicMain.cpp" />
 		<Unit filename="SomeVKMusicMain.h" />
+		<Unit filename="VKAuthenticationDialog.cpp" />
+		<Unit filename="VKAuthenticationDialog.h" />
+		<Unit filename="VKConnection.cpp" />
+		<Unit filename="VKConnection.h" />
+		<Unit filename="VKQuery.h" />
+		<Unit filename="VKResponse.h" />
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>

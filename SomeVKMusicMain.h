@@ -5,14 +5,22 @@
 #include <wx/aui/aui.h>
 
 #include "SomeVKMusicApp.h"
+#include "VKConnection.h"
 
 class SomeVKMusicFrame: public wxFrame{
 public:
     SomeVKMusicFrame();
-    ~SomeVKMusicFrame();
+    virtual ~SomeVKMusicFrame();
 
 private:
     void CreateControls();
+    void InitLogger();
+    void CreateConnection();
+
+    static void AcceptPlaylist(const wxString &response);
+
+private:
+    VKConnection *m_connection;
 
 //GUI Elements
 private:
@@ -27,6 +35,7 @@ private:
                     *m_play_pause,
                     *m_stop,
                     *m_next;
+
 private:
     enum GUIElementsID{
         ID_BUTTON_PREV = 100,
