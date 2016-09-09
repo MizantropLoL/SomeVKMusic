@@ -39,10 +39,13 @@ private:
 };
 
 
-struct VKPlaylist{
-    wxVector<VKSong *> Songs;
+class VKPlaylist{
+private:
+    wxVector<VKSong *> m_songs;
+    int m_current_song;
 
-    VKPlaylist(wxString response){
+public:
+    VKPlaylist(wxString response) : m_current_song(0){
         response.Replace("- <", "<");
         response.Trim(false);
         wxStringInputStream input(response);
@@ -56,6 +59,29 @@ struct VKPlaylist{
         {
             Songs.push_back(new VKSong(audio));
         }
+    }
+
+    virtual ~VKPlaylist(){
+        for (auto song: m_songs)
+            delete song;
+    }
+
+    const Song *GetSong(int number){
+        if (number < 0) throw "Audio ¹ can't be less than 0";
+        if (number >= m_songs.size()) throw "Audio # can't be biggest than audios count";
+
+        m_current_song = number;
+        return m_songs[m_current_song];
+    }
+
+    const Song *GetNext(){
+        if (++m_current_song == m_songs.size()) m_current_song = 0;
+        return m_songs[m_current_song];
+    }
+
+    const Song *GetPrev(){
+        if (m_current_song-- == 0) m_current_song = m_songs.size() - 1;
+        return m_songs[m_current_song];
     }
 };
 
