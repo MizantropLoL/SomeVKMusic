@@ -29,6 +29,8 @@
 					<Add library="libwxmsw30ud_webview.a" />
 					<Add library="libwxbase30ud_xml.a" />
 					<Add library="libwxbase30ud_net.a" />
+					<Add library="libwxmsw30ud_media.a" />
+					<Add library="libwxmsw30ud_adv.a" />
 					<Add directory="%wxwin%/lib/gcc_dll" />
 				</Linker>
 			</Target>
@@ -55,6 +57,8 @@
 					<Add library="libwxmsw30u_webview.a" />
 					<Add library="libwxbase30u_xml.a" />
 					<Add library="libwxbase30u_net.a" />
+					<Add library="libwxmsw30u_media.a" />
+					<Add library="libwxmsw30u_adv.a" />
 					<Add directory="%wxwin%/lib/gcc_dll" />
 				</Linker>
 			</Target>
@@ -75,16 +79,20 @@
 		<Linker>
 			<Add option="-mthreads" />
 		</Linker>
+		<Unit filename="FileSavingThread.h" />
 		<Unit filename="SomeVKMusicApp.cpp" />
 		<Unit filename="SomeVKMusicApp.h" />
 		<Unit filename="SomeVKMusicMain.cpp" />
 		<Unit filename="SomeVKMusicMain.h" />
+		<Unit filename="TaskbarIcon.h" />
 		<Unit filename="VKAuthenticationDialog.cpp" />
 		<Unit filename="VKAuthenticationDialog.h" />
 		<Unit filename="VKConnection.cpp" />
 		<Unit filename="VKConnection.h" />
+		<Unit filename="VKPlaylistFrame.h" />
 		<Unit filename="VKQuery.h" />
 		<Unit filename="VKResponse.h" />
+		<Unit filename="icon.ico" />
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>

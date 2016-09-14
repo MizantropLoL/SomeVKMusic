@@ -9,43 +9,50 @@ class VKConnection;
 namespace{
     const wxString ARG_OWNER_ID     = "owner_id=";
     const wxString ARG_ACCESS_TOKEN = "access_token=";
-    const wxString ARG_OFFSET       = "offset=";
-    const wxString ARG_COUNT        = "count=";
+    const wxString ARG_Q            = "?q=";
+    const wxString ARG_TARGET_AUDIO = "target_audio=";
 
 
-    const wxString M_BASE_QUERY_AUDIO = "https://api.vk.com/method/audio.get.xml?"
-                                        "owner_id="
-                                        "&offset="
-                                        "&count="
-                                        "&access_token=";
+    const wxString M_BASE_QUERY_AUDIO       = "https://api.vk.com/method/audio.get.xml?"
+                                                "owner_id="
+                                                "&offset=0"
+                                                "&count=6000"
+                                                "&access_token=";
+    const wxString M_BASE_QUERY_SEARCH      = "https://api.vk.com/method/audio.search.xml?"
+                                                "q="
+                                                "&auto_complete=1"
+                                                "&offset=0"
+                                                "&count=1000"
+                                                "&access_token=";
+    const wxString M_BASE_QUERY_RECOMMEND   = "https://api.vk.com/method/audio.getRecommendations.xml?"
+                                                "target_audio="
+                                                "&owner_id="
+                                                "&offset=0"
+                                                "&count=1000"
+                                                "&shuffle=1"
+                                                "&access_token=";
 }
 
 class VKQuery{
-friend VKConnection;
 protected:
     wxString m_query_str;
 
-protected:
-    bool     m_user_id = false,
-             m_access_token = false;
+private:
+    wxString m_access_token;
 
 public:
     virtual ~VKQuery() {};
 
-protected:
-    virtual wxString GetFullQuery() const{
-        return (m_user_id&&m_access_token) ? m_query_str.data() : wxEmptyString;
+public:
+    virtual wxString GetFullQuery(){
+        if (m_access_token.IsEmpty()) return wxEmptyString;
+        m_query_str.insert(GetTokenPos(ARG_ACCESS_TOKEN), m_access_token);
+
+        return m_query_str;
     }
 
-private:
-
-    void SetOwnerID(const wxString &user_id){
-        m_query_str.insert(GetTokenPos(ARG_OWNER_ID), user_id);
-        m_user_id = true;
-    }
     void SetAccessToken(const wxString &access_token){
-        m_query_str.insert(GetTokenPos(ARG_ACCESS_TOKEN), access_token);
-        m_access_token = true;
+        m_access_token = access_token;
     }
 
 protected:
@@ -59,34 +66,88 @@ protected:
 
 class VKQueryPlaylistGet : public VKQuery{
 private:
-    bool m_offset = false,
-         m_count = false;
+    wxString m_user_id;
 
 public:
-    VKQueryPlaylistGet() {m_query_str = M_BASE_QUERY_AUDIO;}
-    VKQueryPlaylistGet(int offset, int count){
+    VKQueryPlaylistGet(const wxString &user_id = wxEmptyString){
         m_query_str = M_BASE_QUERY_AUDIO;
-        wxLogMessage(m_query_str);
 
-        SetOffset(offset);
-        SetCount(count);
-
-        wxLogMessage(m_query_str);
+        SetOwnerID(user_id);
     }
 
-    virtual ~VKQueryPlaylistGet() {};
+    virtual ~VKQueryPlaylistGet() {}
 
-    virtual wxString GetFullQuery() const{
-        return (m_offset&&m_count) ? VKQuery::GetFullQuery().data() : wxEmptyString;
+    virtual wxString GetFullQuery(){
+        if (m_user_id.IsEmpty()) return wxEmptyString;
+
+        m_query_str.insert(GetTokenPos(ARG_OWNER_ID), m_user_id);
+
+        return VKQuery::GetFullQuery();
     }
 
-    void SetOffset(int offset){
-        m_query_str.insert(GetTokenPos(ARG_OFFSET), wxString::FromDouble(offset));
-        m_offset = true;
+    void SetOwnerID(const wxString &user_id){
+        m_user_id = user_id;
     }
-    void SetCount(int count){
-        m_query_str.insert(GetTokenPos(ARG_COUNT), wxString::FromDouble(count));
-        m_count = true;
+};
+
+class VKQueryPlaylistSearch : public VKQuery{
+private:
+    wxString m_q;
+
+public:
+    VKQueryPlaylistSearch(const wxString &q = wxEmptyString){
+        m_query_str = M_BASE_QUERY_SEARCH;
+
+        SetQ(q);
+    }
+    virtual ~VKQueryPlaylistSearch() {}
+
+    virtual wxString GetFullQuery(){
+        if (m_q.IsEmpty()) return wxEmptyString;
+
+        m_query_str.insert(GetTokenPos(ARG_Q), m_q);
+
+        return VKQuery::GetFullQuery();
+    }
+
+    void SetQ(const wxString &q){
+        m_q = q;
+    }
+};
+
+class VKQueryPlaylistRecommend : public VKQuery{
+private:
+    wxString m_user_id;
+    wxString m_target_audio;
+
+public:
+    VKQueryPlaylistRecommend(const wxString &user_id, const wxString &targer_audio = wxEmptyString){
+        m_query_str = M_BASE_QUERY_RECOMMEND;
+
+        SetTargetAudio(targer_audio);
+        SetOwnerID(user_id);
+    }
+    virtual ~VKQueryPlaylistRecommend() {}
+
+    virtual wxString GetFullQuery(){
+        if (m_user_id.IsEmpty()) return wxEmptyString;
+
+        m_query_str.insert(GetTokenPos(ARG_OWNER_ID), m_user_id);
+        if (!m_target_audio.IsEmpty())
+            m_query_str.insert(GetTokenPos(ARG_TARGET_AUDIO), m_user_id + "_" + m_target_audio);
+        else
+            //Do not delete "?", but delete "&"
+            m_query_str.erase(GetTokenPos(ARG_TARGET_AUDIO) - ARG_TARGET_AUDIO.Len()+1, ARG_TARGET_AUDIO.Len());
+
+        return VKQuery::GetFullQuery();
+    }
+
+    void SetOwnerID(const wxString &user_id){
+        m_user_id = user_id;
+    }
+
+    void SetTargetAudio(const wxString &target_audio){
+        m_target_audio = target_audio;
     }
 };
 

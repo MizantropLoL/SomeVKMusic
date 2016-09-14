@@ -2,7 +2,7 @@
 #include "VKAuthenticationDialog.h"
 
 VKConnection::VKConnection(){
-    if (!Authenticate()) throw "Authentication error";
+    if (!Authenticate()) throw _("Authentication error");
     InitWebView();
 }
 
@@ -27,22 +27,24 @@ void VKConnection::OnWebSourceLoaded(wxWebViewEvent &event){
 }
 
 void VKConnection::TakeResponse(){
-    m_last_response = m_web_source->GetPageText();
-    wxLogMessage(m_last_response);
-
-    m_receipt_method(m_last_response);
+    if (m_ReceiptMethod != nullptr && m_responce_out != nullptr)
+        m_ReceiptMethod(m_web_source->GetPageText(), m_responce_out);
 }
 
 void VKConnection::MakeQuery(VKQuery *query){
-    query->SetOwnerID(m_user_id);
     query->SetAccessToken(m_access_token);
 
-    wxLogMessage(query->GetFullQuery());
     m_web_source->LoadURL(query->GetFullQuery());
 
     delete query;
 }
 
-void VKConnection::ConnectResponseGetter(void (*receipt_method)(const wxString &response)){
+void VKConnection::ConnectResponseGetter(void (*receipt_method)(const wxString &response, void **out), void **out){
     m_ReceiptMethod = receipt_method;
+    m_responce_out = out;
+}
+
+
+wxString VKConnection::GetUserID() const{
+    return m_user_id;
 }

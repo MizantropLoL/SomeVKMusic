@@ -14,7 +14,8 @@ public:
 
 public:
     void MakeQuery(VKQuery *query);
-    void ConnectResponseGetter(void (*receipt_method)(const wxString &response));
+    void ConnectResponseGetter(void (*receipt_method)(const wxString &response, void **out), void **out);
+    wxString GetUserID() const;
 
 private:
     bool Authenticate();
@@ -27,18 +28,12 @@ private:
 private:
     wxString        m_access_token,
                     m_user_id;
-    wxString        m_last_response;
 
     wxWebView      *m_web_source;
     wxFrame        *m_web_frame;
 
-    void (*m_ReceiptMethod)(const wxString &response);
-
-//private:
-public:
-    enum ActiveElementsID{
-        ID_WEB_SOURCE = 300
-    };
+    void (*m_ReceiptMethod)(const wxString &response, void **out) = nullptr;
+    void **m_responce_out = nullptr;
 };
 
 #endif // VKCONNECTION_H
