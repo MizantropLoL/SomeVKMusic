@@ -115,7 +115,7 @@ void SomeVKMusicFrame::CreateControls(){
 
 
     m_taskbar = new SomeVKMusicTaskbarIcon(this);
-    wxIcon icon("icon.ico", wxBITMAP_TYPE_ICO);
+    wxIcon icon("MAINICON", wxBITMAP_TYPE_ICO_RESOURCE);
     if ( !m_taskbar->SetIcon(icon) )
         wxLogError(wxT("Could not set icon."));
     SetIcon(icon);

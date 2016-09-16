@@ -5384,7 +5384,7 @@
 	<cstdlib>
 	<ctime>
 
-1473168211 source:f:\somevkmusic\resource.rc
+1474065340 source:f:\somevkmusic\resource.rc
 	"wx/msw/wx.rc"
 
 1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\msw\wx.rc
@@ -6283,12 +6283,17 @@
 1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\univ\theme.h
 	"wx/string.h"
 
-1473469318 f:\somevkmusic\somevkmusicmain.h
+1473888366 f:\somevkmusic\somevkmusicmain.h
 	<wx/wx.h>
 	<wx/aui/aui.h>
 	<wx/mediactrl.h>
+	<wx/tglbtn.h>
+	<wx/dir.h>
+	<wx/taskbar.h>
 	"SomeVKMusicApp.h"
 	"VKConnection.h"
+	"VKPlaylistFrame.h"
+	"FileSavingThread.h"
 
 1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\wx.h
 	"wx/defs.h"
@@ -7462,7 +7467,7 @@
 	"wx/string.h"
 	"wx/arrstr.h"
 
-1473466791 f:\somevkmusic\vkconnection.h
+1473804674 f:\somevkmusic\vkconnection.h
 	<wx/wx.h>
 	<wx/xml/xml.h>
 	<wx/webview.h>
@@ -7493,34 +7498,37 @@
 1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\msw\webviewhistoryitem_ie.h
 	"wx/setup.h"
 
-1473361324 f:\somevkmusic\vkquery.h
+1473798270 f:\somevkmusic\vkquery.h
 	<wx/wx.h>
 	"VKPlaylist.h"
 
 1473361320 f:\somevkmusic\vkplaylist.h
 
-1473466102 f:\somevkmusic\vkresponse.h
+1473773747 f:\somevkmusic\vkresponse.h
 	<wx/wx.h>
 	<wx/xml/xml.h>
 	<wx/sstream.h>
+	<wx/uri.h>
 	<cstdlib>
 	<ctime>
 
-1473358300 source:f:\somevkmusic\vkauthenticationdialog.cpp
+1473844612 source:f:\somevkmusic\vkauthenticationdialog.cpp
 	"VKAuthenticationDialog.h"
 
-1473200507 f:\somevkmusic\vkauthenticationdialog.h
+1473844384 f:\somevkmusic\vkauthenticationdialog.h
 	<wx/wx.h>
 	<wx/webview.h>
 
-1473466934 source:f:\somevkmusic\somevkmusicmain.cpp
+1474067766 source:f:\somevkmusic\somevkmusicmain.cpp
 	<wx/sizer.h>
 	<wx/log.h>
+	<wx/config.h>
 	<fstream>
+	"TaskbarIcon.h"
 	"SomeVKMusicMain.h"
 	"VKPlaylist.h"
 
-1473467041 source:f:\somevkmusic\vkconnection.cpp
+1473844384 source:f:\somevkmusic\vkconnection.cpp
 	"VKConnection.h"
 	"VKAuthenticationDialog.h"
 
@@ -7848,4 +7856,165 @@
 
 1412497150 d:\programs\codeblocks\wxwidgets\include\wx\msw\registry.h
 	"wx/defs.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\lib\gcc_dll\mswu\wx\setup.h
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\tglbtn.h
+	"wx/defs.h"
+	"wx/event.h"
+	"wx/anybutton.h"
+	"wx/univ/tglbtn.h"
+	"wx/msw/tglbtn.h"
+	"wx/gtk/tglbtn.h"
+	"wx/gtk1/tglbtn.h"
+	"wx/motif/tglbtn.h"
+	"wx/osx/tglbtn.h"
+	"wx/os2/tglbtn.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\univ\tglbtn.h
+	"wx/button.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\msw\tglbtn.h
+	"wx/bitmap.h"
+
+1412497148 d:\codeblocks\wxwidgets-3.0.2\include\wx\dir.h
+	"wx/longlong.h"
+	"wx/string.h"
+	"wx/filefn.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\taskbar.h
+	"wx/defs.h"
+	"wx/event.h"
+	"wx/msw/taskbar.h"
+	"wx/gtk/taskbar.h"
+	"wx/unix/taskbarx11.h"
+	"wx/osx/taskbarosx.h"
+	"wx/cocoa/taskbar.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\msw\taskbar.h
+	"wx/icon.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\unix\taskbarx11.h
+
+1473843524 f:\somevkmusic\vkplaylistframe.h
+	<wx/grid.h>
+	"VKResponse.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\grid.h
+	"wx/generic/grid.h"
+	"wx/generic/grideditors.h"
+	"wx/generic/gridctrl.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\generic\grid.h
+	"wx/defs.h"
+	"wx/hashmap.h"
+	"wx/scrolwin.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\generic\grideditors.h
+	"wx/defs.h"
+	"wx/scopedptr.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\generic\gridctrl.h
+	"wx/grid.h"
+	"wx/datetime.h"
+
+1473786522 f:\somevkmusic\filesavingthread.h
+	<wx/wx.h>
+	<wx/thread.h>
+	<wx/url.h>
+	<wx/wfstream.h>
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\url.h
+	"wx/defs.h"
+	"wx/uri.h"
+	"wx/protocol/protocol.h"
+	"wx/protocol/http.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\protocol\protocol.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/string.h"
+	"wx/stream.h"
+	"wx/socket.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\socket.h
+	"wx/defs.h"
+	"wx/event.h"
+	"wx/sckaddr.h"
+	"wx/list.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\sckaddr.h
+	"wx/defs.h"
+	"wx/string.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\protocol\http.h
+	"wx/defs.h"
+	"wx/hashmap.h"
+	"wx/protocol/protocol.h"
+	"wx/buffer.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\wfstream.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/string.h"
+	"wx/stream.h"
+	"wx/file.h"
+	"wx/ffile.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\ffile.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/filefn.h"
+	"wx/convauto.h"
+	<stdio.h>
+
+1412497148 d:\codeblocks\wxwidgets-3.0.2\include\wx\config.h
+	"wx/confbase.h"
+	"wx/msw/regconf.h"
+	"wx/os2/iniconf.h"
+	"wx/fileconf.h"
+
+1412497148 d:\codeblocks\wxwidgets-3.0.2\include\wx\confbase.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/object.h"
+	"wx/base64.h"
+
+1412497148 d:\codeblocks\wxwidgets-3.0.2\include\wx\base64.h
+	"wx/string.h"
+	"wx/buffer.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\msw\regconf.h
+	"wx/defs.h"
+	"wx/msw/registry.h"
+	"wx/object.h"
+	"wx/confbase.h"
+	"wx/buffer.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\msw\registry.h
+	"wx/defs.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\fileconf.h
+	"wx/defs.h"
+	"wx/textfile.h"
+	"wx/string.h"
+	"wx/confbase.h"
+	"wx/filename.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\textfile.h
+	"wx/defs.h"
+	"wx/textbuf.h"
+	"wx/file.h"
+
+1412497150 d:\codeblocks\wxwidgets-3.0.2\include\wx\textbuf.h
+	"wx/defs.h"
+	"wx/arrstr.h"
+	"wx/convauto.h"
+	"wx/string.h"
+	"wx/dynarray.h"
+
+1473888937 f:\somevkmusic\taskbaricon.h
+	<wx/wx.h>
+	<wx/taskbar.h>
+	"SomeVKMusicMain.h"
 
