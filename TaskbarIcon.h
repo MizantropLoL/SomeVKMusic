@@ -58,6 +58,7 @@ public:
 
 private:
     void OnLeftButtonDClick(wxCommandEvent &event){
+        m_main_frame->Show();
         m_main_frame->Restore();
     }
     void OnExitMenu(wxMenuEvent &event){
